@@ -1,0 +1,112 @@
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.calendar-main{
+  width: 660px;
+}
+.calendar-main a{
+  color: #7B00FF;
+}
+  .calendar-datetime{
+    position: relative;
+    width: 66%;
+    min-width: 100px;
+    max-width: 300px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .calendar-datetime .today{
+    position: relative;
+    float: left;
+    width: calc(100% - 40px);
+    margin: auto;
+    text-align: center;
+  }
+  .calendar-nav{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+  .calendar-nav:hover{
+    cursor: pointer;
+  }
+  .calendar-nav:hover svg{
+      fill: #666;
+  }
+  .calendar-rwd{
+    float: left;
+  }
+  .calendar-fwd{
+    float: right;
+  }
+    .calendar-nav svg:hover{
+
+    }
+.calendar-labels, .calendar-days{
+  padding-left: 0;
+}
+  .calendar-label, .calendar-day{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 14.28%;
+    text-align: center;
+  }
+  .calendar-day{
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    height: 66px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  .calendar-day.clickable:hover{
+    cursor: pointer;
+  }
+  .calendar-day.today{
+    border: 1px solid #7B00FF;
+  }
+  .calendar-day.disableDay{
+    opacity: 0.5;
+  }
+  .calendar-day.nextMonth, .calendar-day.prevMonth{
+    opacity: 0.33;
+  }
+    .calendar-number{
+      margin: 0;
+      text-align: left;
+    }
+      .calendar-title{
+        font-size: 10px;
+        display: block;
+        margin: 0;
+        font-weight: normal;
+      }
+      .calendar-day:hover{
+        background: #eee;
+      }
+      .calendar-number.eventday{
+        font-weight: bold;
+      }
+      .calendar-number.eventday:hover{
+        background: #eee;
+      }
+      .today .calendar-number.eventday:hover{
+      }
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+}
